@@ -2,6 +2,13 @@
 
 var http = require("http");
 var url = require("url");
+var express = require('express');
+var app = express();
+app.use(express.static('static'));
+var bodyParser = require('body-parser');
+var fs = require("fs");
+
+
 
 http.createServer(function(request, response) {
     var pathname = url.parse(request.url).pathname;
